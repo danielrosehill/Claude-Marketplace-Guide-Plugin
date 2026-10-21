@@ -42,8 +42,8 @@ library only, JSON output) fetches the published `marketplace.json` each time it
 `groups.json` holds only group names and the plugins in each. Sources are tried in
 this order:
 
-1. raw GitHub URL (public marketplace),
-2. `gh api` on the repo (private marketplaces; needs `gh` auth),
+1. `gh api` on the marketplace repo (freshest; needs `gh` auth, and is required for private marketplaces),
+2. the raw GitHub URL (public only; GitHub's CDN can serve it up to ~5 minutes stale after a push),
 3. Claude Code's local copy in `~/.claude/plugins/marketplaces/<name>/`, last, because
    it refreshes only on `/plugin marketplace update` and can lag behind. Output read
    from it carries a `warning`.

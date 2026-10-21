@@ -6,8 +6,9 @@ marketplace.json. Themed groups (groups.json, next to this plugin) only name plu
 
 Manifest source, first that works:
   1. --manifest PATH            explicit file
-  2. --url / groups.json "manifest_url"   raw GitHub (public marketplaces)
-  3. groups.json "repo" via `gh api`      private marketplaces, needs gh auth
+  2. groups.json "repo" via `gh api`      freshest; needs gh auth (required for private)
+  3. --url / groups.json "manifest_url"   raw GitHub, public only; the CDN serves
+     `main` up to ~5 min stale after a push (seen 2026-10-21)
   4. ~/.claude/plugins/marketplaces/<marketplace>/  Claude Code's own clone. Last,
      because it only refreshes on `/plugin marketplace update` and can lag (seen
      2026-10-21: 172 plugins locally vs 178 published). Output carries a warning.
@@ -61,6 +62,17 @@ def load_manifest(args, cfg):
             return json.loads(pathlib.Path(args.manifest).read_text()), args.manifest, None, None
         except Exception as e:
             out({"error": f"cannot read --manifest: {e}"}, 2)
+    repo = cfg.get("repo") if own and not args.url else None
+    if repo:
+        try:
+            m = json.loads(gh_file(repo, ".claude-plugin/marketplace.json"))
+            try:
+                cl = gh_file(repo, "CHANGELOG.md")
+            except Exception:
+                cl = None
+            return m, f"gh api {repo}", cl, None
+        except Exception as e:
+            tried.append(f"gh api {repo} ({e})")
     url = args.url or (cfg.get("manifest_url") if own else None)
     if url:
         try:
@@ -74,17 +86,6 @@ def load_manifest(args, cfg):
             return m, url, cl, None
         except Exception as e:
             tried.append(f"{url} ({e})")
-    repo = cfg.get("repo") if own else None
-    if repo:
-        try:
-            m = json.loads(gh_file(repo, ".claude-plugin/marketplace.json"))
-            try:
-                cl = gh_file(repo, "CHANGELOG.md")
-            except Exception:
-                cl = None
-            return m, f"gh api {repo}", cl, None
-        except Exception as e:
-            tried.append(f"gh api {repo} ({e})")
     local = pathlib.Path.home() / ".claude/plugins/marketplaces" / name
     lm = local / ".claude-plugin/marketplace.json"
     if lm.exists():

@@ -12,3 +12,5 @@ the plugin manifest differ.
   then follow `skills/maintain-groups`.
 - The local Claude Code marketplace clone can lag the published manifest. Verified
   2026-10-21: 172 local vs 178 published. That is why it is the last source tried.
+- raw.githubusercontent.com served `main` about 5 minutes stale right after a push
+  (2026-10-21), so `gh api` goes first and the raw URL is the fallback for users without `gh`.
