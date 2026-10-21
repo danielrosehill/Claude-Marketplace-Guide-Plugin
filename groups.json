@@ -208,7 +208,7 @@
         "security-checkup",
         "gpg-ops",
         "digital-evidence",
-        "spamhole",
+        "pseudospam-filter",
         "linux-av-manager",
         "plugin-vault"
       ]
