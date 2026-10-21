@@ -18,7 +18,7 @@ Commands (all print JSON):
   list                   every plugin, compact (name, description, category)
   search <terms...>      keyword-ranked matches over name/description/tags/category
   show <plugin>          one plugin's full manifest entry + install line
-  new [--limit N]        recent additions, from the marketplace CHANGELOG.md
+  new [--limit N]        recent additions, from CHANGELOG.md (else recent commits via gh)
   check                  groups.json vs manifest: unknown names, ungrouped plugins
 
 Exit codes: 0 ok, 2 manifest unreachable, 3 unknown group/plugin, 4 check found problems.
@@ -186,7 +186,18 @@ def main():
 
     if args.cmd == "new":
         if not changelog:
-            out({"error": "no CHANGELOG.md available for this marketplace"}, 2)
+            repo = cfg.get("repo")
+            if not repo:
+                out({"error": "no CHANGELOG.md available for this marketplace"}, 2)
+            import subprocess
+            r = subprocess.run(["gh", "api", f"repos/{repo}/commits?per_page={args.limit * 10}",
+                                "--jq", "[.[] | {date: .commit.author.date[:10], message: (.commit.message | split(\"\\n\")[0])}]"],
+                               capture_output=True, text=True, timeout=30)
+            if r.returncode:
+                out({"error": "no CHANGELOG.md and commit history unreachable", "detail": r.stderr.strip()[:200]}, 2)
+            out({"marketplace": mkt, "source": f"commits of {repo}",
+                 "note": "No CHANGELOG.md; these are the marketplace repo's recent commit subjects.",
+                 "recent": json.loads(r.stdout)})
         sections = re.split(r"(?m)^### ", changelog)[1:]
         res = []
         for sec in sections[:args.limit]:
