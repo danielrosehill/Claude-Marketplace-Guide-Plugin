@@ -91,7 +91,8 @@
         "task-queuer",
         "llm-council-creator",
         "chatgpt-importer",
-        "kde-agent-workspace"
+        "kde-agent-workspace",
+        "skill-or-not"
       ]
     },
     {
