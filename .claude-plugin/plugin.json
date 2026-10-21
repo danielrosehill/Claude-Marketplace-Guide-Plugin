@@ -1,0 +1,9 @@
+{
+  "name": "marketplace-guide",
+  "version": "0.1.0",
+  "description": "Start here: browse this marketplace by theme (Israel & Hebrew, homelab, Linux desktop, Claude Code tooling, shopping, writing…), get plugin recommendations for a task, and see what's new. Reads the live published manifest, so it never goes stale.",
+  "author": {"name": "Daniel Rosehill", "url": "https://github.com/danielrosehill"},
+  "repository": "https://github.com/danielrosehill/Claude-Marketplace-Guide-Plugin",
+  "license": "MIT",
+  "keywords": ["marketplace", "discovery", "plugins", "catalogue", "start-here", "recommend"]
+}

@@ -1,0 +1,282 @@
+{
+  "marketplace": "danielrosehill",
+  "repo": "danielrosehill/Claude-Code-Plugins",
+  "manifest_url": "https://raw.githubusercontent.com/danielrosehill/Claude-Code-Plugins/main/.claude-plugin/marketplace.json",
+  "changelog_url": "https://raw.githubusercontent.com/danielrosehill/Claude-Code-Plugins/main/CHANGELOG.md",
+  "groups": [
+    {
+      "id": "start-here",
+      "title": "Start here",
+      "description": "A small first set: discovery, a workspace baseline, context and memory.",
+      "plugins": [
+        "marketplace-guide",
+        "workspace-foundational",
+        "user-context-file",
+        "personal-context",
+        "favorite-plugins-installers"
+      ]
+    },
+    {
+      "id": "israel-hebrew",
+      "title": "Israel & Hebrew",
+      "description": "Israel-specific services, Hebrew/RTL correspondence, Israeli retailers and Jewish texts.",
+      "plugins": [
+        "israel-agent-skills",
+        "israel-opening-hours",
+        "netek-disconnect",
+        "rtl-email",
+        "hebrew-correspondence",
+        "ikea-israel",
+        "maccabi-online-skills",
+        "israel-shopping",
+        "aliexpress-israel-skills",
+        "greeninvoice-ops",
+        "jewish-texts-reference",
+        "jewish-utilities"
+      ]
+    },
+    {
+      "id": "drive-a-website",
+      "title": "Drive a website with your own browser",
+      "description": "Skills that operate a real site in your signed-in Chrome, plus the tools for building more of them.",
+      "plugins": [
+        "site-skill-builder",
+        "browser-data-capture",
+        "local-web-capture",
+        "maccabi-online-skills",
+        "ikea-israel",
+        "amazon",
+        "grainger",
+        "aliexpress-shopper",
+        "aliexpress-israel-skills"
+      ]
+    },
+    {
+      "id": "shopping-procurement",
+      "title": "Shopping & procurement",
+      "description": "Product research, price comparison, retailer skills, RFQs and freight.",
+      "plugins": [
+        "shopping",
+        "procurement-tools",
+        "amazon",
+        "grainger",
+        "aliexpress-shopper",
+        "aliexpress-israel-skills",
+        "israel-shopping",
+        "ikea-israel",
+        "freight-vol-calculator"
+      ]
+    },
+    {
+      "id": "claude-code-tooling",
+      "title": "Claude Code tooling",
+      "description": "Building plugins, MCP servers and evals; managing context, memory and sessions.",
+      "plugins": [
+        "marketplace-guide",
+        "plugin-vault",
+        "favorite-plugins-installers",
+        "unofficial-mcp-builder",
+        "site-skill-builder",
+        "workspace-foundational",
+        "kaizen",
+        "context-toolkit",
+        "context-file-tester",
+        "user-context-file",
+        "user-memory",
+        "personal-context",
+        "sop-library",
+        "rudder",
+        "session-hopper",
+        "eval-runner",
+        "task-queuer",
+        "llm-council-creator",
+        "chatgpt-importer",
+        "kde-agent-workspace"
+      ]
+    },
+    {
+      "id": "linux-desktop",
+      "title": "Linux desktop (KDE)",
+      "description": "KDE Plasma, audio, Bluetooth, clipboard and day-to-day desktop upkeep.",
+      "plugins": [
+        "kde-plasma",
+        "kde-agent-workspace",
+        "kde-plasmoid-dev",
+        "desktop-manager",
+        "linux-desktop-mgmt",
+        "pipewire-audio",
+        "easy-effects-manager",
+        "copyq-scripting",
+        "keyboard-scanner",
+        "linux-bt",
+        "snap-it",
+        "linux-system-optimisation",
+        "linux-debugging"
+      ]
+    },
+    {
+      "id": "homelab",
+      "title": "Homelab & smart home",
+      "description": "Servers, NAS, firewall, containers, backups and Home Assistant.",
+      "plugins": [
+        "sysadmin-homelab",
+        "linux-server-mgmt",
+        "proxmox-mgmt",
+        "synology-mgmt",
+        "opnsense-mgmt",
+        "docker-manager",
+        "backup-planner",
+        "home-assistant-mgmt",
+        "zigbee-home-maintenance",
+        "mqtt-observability",
+        "network-cups"
+      ]
+    },
+    {
+      "id": "writing-publishing",
+      "title": "Writing & publishing",
+      "description": "Docs, books, newsletters, CVs and generated documents.",
+      "plugins": [
+        "content-writing",
+        "technical-docs",
+        "user-manual",
+        "sop-writer",
+        "book-writing",
+        "kdp-publishing",
+        "buttondown-mgmt",
+        "resume-typesetter",
+        "programmatic-doc-generation",
+        "html-email-designer",
+        "repo-to-content",
+        "document-to-markdown"
+      ]
+    },
+    {
+      "id": "audio-voice",
+      "title": "Audio, voice & transcription",
+      "description": "Recording, speech-to-text, text-to-speech and audio processing.",
+      "plugins": [
+        "audio-production",
+        "transcription-pipeline",
+        "text-to-speech-toolkit",
+        "audio-voice-id",
+        "pipewire-audio",
+        "easy-effects-manager"
+      ]
+    },
+    {
+      "id": "research",
+      "title": "Research",
+      "description": "Structured research workspaces, tech and stack research, reports.",
+      "plugins": [
+        "research-space",
+        "modular-research",
+        "tech-research",
+        "stack-search",
+        "github-research",
+        "legal-investigative",
+        "report-analyst",
+        "ai-model-research",
+        "learning"
+      ]
+    },
+    {
+      "id": "personal-life",
+      "title": "Personal life admin",
+      "description": "Planning, budgeting, journaling, chores, travel and decisions.",
+      "plugins": [
+        "personal-planning",
+        "budgeting",
+        "diary-planner",
+        "schedule-manager",
+        "donetick",
+        "travel-packing",
+        "declutter-genie",
+        "decision-evaluation-framework",
+        "therapy-tracking",
+        "contact-support"
+      ]
+    },
+    {
+      "id": "privacy-security",
+      "title": "Privacy & security",
+      "description": "PII scanning, anonymisation, GPG, auditing and evidence handling.",
+      "plugins": [
+        "pii-scanner",
+        "anonymisation-assistant",
+        "security-auditor",
+        "security-checkup",
+        "gpg-ops",
+        "digital-evidence",
+        "spamhole",
+        "linux-av-manager",
+        "plugin-vault"
+      ]
+    },
+    {
+      "id": "media-images",
+      "title": "Images, video & media",
+      "description": "Image generation and editing, diagrams, video, OBS and media libraries.",
+      "plugins": [
+        "image-production",
+        "image-annotation",
+        "background-removal",
+        "gimp",
+        "nano-tech-diagrams",
+        "visual-communications",
+        "video-editing",
+        "ai-video-producer",
+        "obs-mgmt",
+        "media-library",
+        "hardware-id-annotation"
+      ]
+    },
+    {
+      "id": "data",
+      "title": "Data & datasets",
+      "description": "Wrangling, analysis, visualisation, annotation and synthetic data.",
+      "plugins": [
+        "data-wrangler",
+        "data-analyst",
+        "data-visualisation-and-publishing",
+        "data-annotation",
+        "synthetic-data",
+        "taxonomy-creation",
+        "text-corpus-analysis"
+      ]
+    },
+    {
+      "id": "dev-github",
+      "title": "Development & GitHub",
+      "description": "Repo management, GitHub operations, debugging, specs and packaging.",
+      "plugins": [
+        "dev-tools",
+        "dev-debugger",
+        "repo-mgmt",
+        "gh-ops",
+        "github-explorer",
+        "gist-writer",
+        "feedback-filer",
+        "license-populator",
+        "spec-starter",
+        "stack-evaluator",
+        "userscript-development",
+        "linux-packaging",
+        "teach-this-repo"
+      ]
+    },
+    {
+      "id": "hardware-maker",
+      "title": "Hardware & maker",
+      "description": "Label printers, NFC, car diagnostics, printers and hardware specs.",
+      "plugins": [
+        "label-printer",
+        "nfc-ops",
+        "obd-diagnostics",
+        "hardware-spec-assembly",
+        "hp5200-printer",
+        "timemark"
+      ]
+    }
+  ]
+}
