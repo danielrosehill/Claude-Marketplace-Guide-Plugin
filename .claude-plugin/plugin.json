@@ -1,6 +1,6 @@
 {
   "name": "marketplace-guide",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Start here: browse this marketplace by theme (Israel & Hebrew, homelab, Linux desktop, Claude Code tooling, shopping, writing\u2026), get plugin recommendations for a task, and see what's new. Reads the live published manifest, so it never goes stale.",
   "author": {
     "name": "Daniel Rosehill",
