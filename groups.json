@@ -87,7 +87,7 @@
         "sop-library",
         "rudder",
         "session-hopper",
-        "eval-runner",
+        "ai-eval",
         "task-queuer",
         "llm-council-creator",
         "chatgpt-importer",
