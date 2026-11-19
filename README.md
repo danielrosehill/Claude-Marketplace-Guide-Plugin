@@ -25,7 +25,6 @@ manifest and adds themed groups that cut across categories.
 | `browse` | Themed groups and categories, then the plugins in each |
 | `recommend` | Describe a task and get the plugins that fit, with install lines |
 | `whats-new` | Recent additions from the marketplace changelog |
-| `maintain-groups` | Maintainer: reconcile `groups.json` with the live manifest |
 
 ## Themed groups
 

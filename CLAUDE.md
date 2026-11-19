@@ -9,7 +9,8 @@ the plugin manifest differ.
 - Never hard-code plugin lists or counts in skills or README prose. They come from
   the live manifest.
 - After plugins are added to the marketplace: `python3 scripts/marketplace.py check`,
-  then follow `skills/maintain-groups`.
+  then the private `marketplace-manager:maintain-guide-groups` skill. This plugin is
+  discovery-only for third parties: no maintainer skills here (moved out 2026-11-19).
 - The local Claude Code marketplace clone can lag the published manifest. Verified
   2026-10-21: 172 local vs 178 published. That is why it is the last source tried.
 - raw.githubusercontent.com served `main` about 5 minutes stale right after a push

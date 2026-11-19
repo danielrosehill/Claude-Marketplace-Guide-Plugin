@@ -27,7 +27,7 @@ the local copy was used instead. Pass the warning on to the user.
    does in one line. Put the install line at the end, not on every row.
 3. For detail on one plugin, use `show`.
 4. If `group` reports `missing_from_manifest`, the groups file names a plugin that
-   is no longer published. Leave it out and mention `maintain-groups`.
+   is no longer published. Leave it out.
 
 Install line format: `/plugin install <name>@<marketplace>`. The user must have added
 the marketplace once (`/plugin marketplace add <owner>/<repo>`).
